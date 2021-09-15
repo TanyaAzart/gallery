@@ -6,13 +6,13 @@ import myImages from './images';
 
 const Gallery =() =>{
 
-    const images = myImages.slice(0,5)
-    const images1 = myImages.slice(5,15)
-    const images2 = myImages.slice(15,37)
-    const images3 = myImages.slice(37,43)
-    const images4 = myImages.slice(43,48)
+    const school = myImages.slice(0,10)
+    const images = myImages.slice(10,25)
+    const lotos = myImages.slice(25,47)
+    const bands = myImages.slice(47,56)
+    const life = myImages.slice(56,69)
   
-    const [currentImage, setCurrentImage] = useState(myImages[15]);
+    const [currentImage, setCurrentImage] = useState(myImages[25]);
    
     const onImageClick = (image)=>{  
     //     return image !== currentImage ? setCurrentImage(image) : setCurrentImage(null); 
@@ -73,19 +73,19 @@ const Gallery =() =>{
         <div className='gallery'>
             <div className='thumbs'>
                 <div className='pics-chain'> 
-                    {renderedImages(images)}               
+                    {renderedImages(school)}               
                 </div> 
                 <div className='pics-chain'> 
-                    {renderedImages(images1)} 
+                    {renderedImages(images)} 
                 </div> 
                 <div className='pics-chain'> 
-                    {renderedImages(images2)}                
+                    {renderedImages(lotos)}                
                 </div> 
                 <div className='pics-chain'> 
-                    {renderedImages(images3)}                
+                    {renderedImages(bands)}                
                 </div> 
                 <div className='pics-chain'> 
-                    {renderedImages(images4)}                
+                    {renderedImages(life)}                
                 </div> 
             </div>           
                 {enlarged()}                                         
