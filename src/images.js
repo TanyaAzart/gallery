@@ -164,6 +164,14 @@ const images = [
     },
     {
         id: 22,
+        small: '/images/small/12.jpg',
+        large: '/images/large/12.jpg',
+        alt: '',
+        caption: 'Sometext sometext sometext',
+        style: 'wide',
+    },
+    {
+        id: 23,
         small: '/images/small/13.jpg',
         large: '/images/large/13.jpg',
         alt: '',
@@ -171,25 +179,17 @@ const images = [
         style: 'wide',
     },
     {
-        id: 23,
+        id: 24,
         small: '/images/small/14.jpg',
         large: '/images/large/14.jpg',
-        alt: '',
-        caption: 'Sometext sometext sometext',
-        style: 'wide',
-    },
-    {
-        id: 24,
-        small: '/images/small/15.jpg',
-        large: '/images/large/15.jpg',
         alt: '',
         caption: 'Sometext sometext sometext',
         style: 'high',
     },
     {
         id: 25,
-        small: '/images/small/16.jpg',
-        large: '/images/large/16.jpg',
+        small: '/images/small/15.jpg',
+        large: '/images/large/15.jpg',
         alt: '',
         caption: 'Sometext sometext sometext',
         style: 'wide',
@@ -362,6 +362,21 @@ const images = [
     },
     {
         id: 48,
+        small: '/lotus/small/23.jpg',
+        large: '/lotus/large/23.jpg',
+        alt: '',
+        caption: 'Sometext sometext sometext'
+    },
+    {
+        id: 49,
+        small: '/lotus/small/24.jpg',
+        large: '/lotus/large/24.jpg',
+        alt: '',
+        caption: 'Sometext sometext sometext'
+    },
+
+    {
+        id: 48,
         small: '/bands/small/1.jpg',
         large: '/bands/large/1.jpg',
         alt: '',
@@ -402,115 +417,116 @@ const images = [
         alt: '',
         caption: 'Sometext sometext sometext'
     },
+    
     {
         id: 54,
-        small: '/bands/small/7.jpg',
-        large: '/bands/large/7.jpg',
-        alt: '',
-        caption: 'Sometext sometext sometext'
-    },
-    {
-        id: 55,
         small: '/bands/small/8.jpg',
         large: '/bands/large/8.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     },
     {
-        id: 56,
+        id: 55,
         small: '/bands/small/9.jpg',
         large: '/bands/large/9.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     },
     {
-        id: 57,
+        id: 56,
         small: '/life/small/1.jpg',
         large: '/life/large/1.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 58,
+        id: 57,
         small: '/life/small/2.jpg',
         large: '/life/large/2.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 59,
+        id: 58,
         small: '/life/small/3.jpg',
         large: '/life/large/3.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 60,
+        id: 59,
         small: '/life/small/4.jpg',
         large: '/life/large/4.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 61,
+        id: 60,
         small: '/life/small/5.jpg',
         large: '/life/large/5.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 62,
+        id: 61,
         small: '/life/small/6.jpg',
         large: '/life/large/6.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 63,
+        id: 62,
         small: '/life/small/7.jpg',
         large: '/life/large/7.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 64,
+        id: 63,
         small: '/life/small/8.jpg',
         large: '/life/large/8.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 65,
+        id: 64,
         small: '/life/small/9.jpg',
         large: '/life/large/9.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 66,
+        id: 65,
         small: '/life/small/10.jpg',
         large: '/life/large/10.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 67,
+        id: 66,
         small: '/life/small/11.jpg',
         large: '/life/large/11.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 68,
+        id: 67,
         small: '/life/small/12.jpg',
         large: '/life/large/12.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 
     {
-        id: 69,
+        id: 68,
         small: '/life/small/13.jpg',
         large: '/life/large/13.jpg',
+        alt: '',
+        caption: 'Sometext sometext sometext'
+    },
+    {
+        id: 69,
+        small: '/life/small/14.jpg',
+        large: '/life/large/14.jpg',
         alt: '',
         caption: 'Sometext sometext sometext'
     }, 

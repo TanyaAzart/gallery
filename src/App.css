@@ -1,63 +1,68 @@
 figure {
-    margin: 0;
+    margin: auto;
 }
 
 .gallery {
     box-sizing: border-box;
+    display:flexbox;
+    flex-direction: column;   
+}
+
+.pics-chain {
+    display: flex;
+    overflow-x: auto;
+    height: 110px;
+    border:rgb(59, 48, 61) solid 2px 0;
+}
+
+
+.pics-chain  img { 
+    border: 2px solid rgb(129, 126, 129);
+    padding: 1px;
+    margin-right: 0.5vw;
+    cursor: pointer;
+}
+
+.under-chain {
     display:flex;
     flex-direction: row;
 }
 
-.pics-chain  img {    
-    border: 2px solid rgb(59, 48, 61);
-    padding: 1px;
-    margin-right: 1vw;
+.items {
+    width: 20vw;
     cursor: pointer;
 }
 
 #active {
-   border: 3px solid rgb(204, 0, 255);
+   border: 3px solid rgb(255, 0, 85);
 }
 
 .enlarged {
-    position:fixed;
-    top: 2vw;
-    right: 3vw;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;    
+    width: 60vw;
+    margin-top: 1vw;
 }
 
 .enlarged img {
-    border: 1vw solid rgb(129, 126, 129);
-    height:35vw;
+    display:block;
+    margin: auto;
+    border: 5px solid rgb(129, 126, 129);
+    height: 30vw;
     border-radius: 5%;
     cursor: pointer;   
 }
 
-.enlarged.high {
-    right: 15vw;
-}
 
-.enlarged.wide {
-    right: 5vw;
-}
-
-.enlarged.wide img {
-    height:30vw;
-}
-
-.left-icon {    
-    padding-top:15vw;
-    margin-right: -10vw;
-    padding-right: 8vw;
+.left-icon {  
+    position:fixed; 
+    top: 15vw;
+    left: 20vw;
     z-index: 1;   
 }
 
 .right-icon {
-    padding-top:15vw;  
-    margin-left: -10vw;
-    padding-left: 8vw;
+    position: fixed;
+    top: 20vw;
+    left:20vw;
     z-index: 1; 
 }
 
@@ -69,7 +74,4 @@ img#icon{
 
 .caption {    
     text-align: center;
-}
-.thumbs {
-    width: 40%;
 }

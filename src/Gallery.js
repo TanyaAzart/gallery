@@ -8,26 +8,66 @@ const Gallery =() =>{
 
     const school = myImages.slice(0,10)
     const images = myImages.slice(10,25)
-    const lotos = myImages.slice(25,47)
-    const bands = myImages.slice(47,56)
-    const life = myImages.slice(56,69)
-  
-    const [currentImage, setCurrentImage] = useState(myImages[25]);
+    const lotos = myImages.slice(25,49)
+    const bands = myImages.slice(49,57)
+    const life = myImages.slice(57,71)
+
+    const items = [{
+        title:  "Школа",
+        pics:  school
+    },
+    {
+        title: "Образы",
+        pics: images
+    },
+    {
+        title:  "Театр",
+        pics: lotos
+    },
+    {
+        title: "Выступления",
+        pics: bands
+    },
+    {
+        title: "Жизнь",
+        pics: life
+    }]  
+       
+    const [currentItem, setCurrentItem] = useState(items[2]);
+    const [currentImage, setCurrentImage] = useState(currentItem.pics[0]);
+
+    const [visibility, setVisibility] = useState('none');
+
+    const onItemClick = (item)=>{
+        setCurrentItem (item);
+        setCurrentImage(item.pics[0])
+    };
    
     const onImageClick = (image)=>{  
-    //     return image !== currentImage ? setCurrentImage(image) : setCurrentImage(null); 
         setCurrentImage(image);     
     };
 
+    const onImageHover =(string)=> {
+        setVisibility(string);
+    }
+
     const onLeftClick =() => {
-        const newImage = myImages.find(image=>image.id===currentImage.id - 1) || myImages[myImages.length-1];
+        const newImage = currentItem.pics.find(image=>image.id===currentImage.id - 1) || currentItem.pics[currentItem.pics.length-1];
         setCurrentImage(newImage)
     };
 
     const onRightClick =() => {
-        const newImage = myImages.find(image=>image.id===currentImage.id + 1) || myImages[0];
+        const newImage = currentItem.pics.find(image=>image.id===currentImage.id + 1) || currentItem.pics[0];
         setCurrentImage(newImage)
     };
+
+    const renderedItems = items.map(item=> {
+        return(
+            <React.Fragment>
+                <li onClick={()=>onItemClick(item)}>{item.title}</li>
+            </React.Fragment>
+        )
+    })
 
     const renderedImages = (imgs) =>{
         
@@ -36,7 +76,12 @@ const Gallery =() =>{
             const atr = image===currentImage ? 'active' : '';
             
             return(<React.Fragment  key={image.id} >
-                <img id={atr} src={image.small} alt ='thumbnail'  onClick={()=>onImageClick(image)}/> 
+                        <img 
+                            id={atr} 
+                            src={image.small} 
+                            alt ='thumbnail'  
+                            onClick={()=>onImageClick(image)}
+                        /> 
                     </React.Fragment>            
             )
         });
@@ -44,51 +89,48 @@ const Gallery =() =>{
 
     const enlarged = () => {         
         if (currentImage) {
-            
-            const atr = currentImage.style || '';
+
+            const atr = currentImage.style || '';            
             
             return (                             
-                <div className={`enlarged ${atr}`}> 
-                    <div className='left-icon' onClick={()=>onLeftClick()}>
-                        <img id='icon' src ={Left} alt=''/>
-                        </div> 
-                           <figure>
-                                <img  src= {currentImage.large} 
-                                    alt={currentImage.alt} onClick={()=>onImageClick(currentImage)}/>
-                                    <br/>
-                                    <figcaption className='caption'>{currentImage.caption}</figcaption>
-                            </figure>                       
-                        <div className='right-icon' onClick={()=>onRightClick()}>
-                        <img id='icon' src={Right}  alt=''/>
-                    </div>                  
+                <div 
+                    className={`enlarged ${atr}`} 
+                    onMouseEnter={()=>onImageHover('')}
+                    onMouseLeave={()=>onImageHover('none')}
+                    > 
+                    <figure>                           
+                        <img  
+                            src= {currentImage.large} 
+                            alt={currentImage.alt} 
+                            onClick={()=>onImageClick(currentImage)}
+                            />
+                        <br/>
+                        <figcaption className='caption'>{currentImage.caption}</figcaption>
+                    </figure>
+                        <div className='left-icon' onClick={()=>onLeftClick()} style={{display: `${visibility}`}}>
+                            <img id='icon' src ={Left} alt=''/>
+                        </div>
+                        <div className='right-icon' onClick={()=>onRightClick()} style={{display: `${visibility}`}}>
+                            <img id='icon' src={Right}  alt=''/>
+                        </div>                                        
                 </div>      
             )
         } 
-        else {
-            return;
-        }
     }
 
     return (
         <div className='gallery'>
-            <div className='thumbs'>
-                <div className='pics-chain'> 
-                    {renderedImages(school)}               
-                </div> 
-                <div className='pics-chain'> 
-                    {renderedImages(images)} 
-                </div> 
-                <div className='pics-chain'> 
-                    {renderedImages(lotos)}                
-                </div> 
-                <div className='pics-chain'> 
-                    {renderedImages(bands)}                
-                </div> 
-                <div className='pics-chain'> 
-                    {renderedImages(life)}                
-                </div> 
-            </div>           
-                {enlarged()}                                         
+            <div className='pics-chain'>                   
+                    {renderedImages(currentItem.pics)}               
+                </div>
+            <div className='under-chain'>
+                <div className='items'>
+                    <ul>
+                        {renderedItems}
+                    </ul>
+                </div>
+            {enlarged()} 
+                </div>                                                   
         </div>
     )
 }
