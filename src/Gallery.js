@@ -10,16 +10,13 @@ const Gallery =() =>{
     const images = myImages.slice(10,25)
     const lotos = myImages.slice(25,49)
     const bands = myImages.slice(49,57)
-    const life = myImages.slice(57,71)
+    const life = myImages.slice(57,89)
 
     const items = [{
         title:  "Школа",
         pics:  school
     },
-    {
-        title: "Образы",
-        pics: images
-    },
+    
     {
         title:  "Театр",
         pics: lotos
@@ -29,11 +26,15 @@ const Gallery =() =>{
         pics: bands
     },
     {
+        title: "Образы",
+        pics: images
+    },
+    {
         title: "Жизнь",
         pics: life
     }]  
        
-    const [currentItem, setCurrentItem] = useState(items[2]);
+    const [currentItem, setCurrentItem] = useState(items[1]);
     const [currentImage, setCurrentImage] = useState(currentItem.pics[0]);
 
     const [visibility, setVisibility] = useState('none');
