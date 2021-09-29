@@ -8,8 +8,7 @@ const App =() =>{
   
   return (
     <div>     
-        <Gallery/> 
-        <Sound />     
+        <Sound/> 
     </div>
     
   );

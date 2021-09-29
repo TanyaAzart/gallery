@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import Left from './left.png';
 import Right from './right.png';
 import myImages from './images';
+import Liversion from './liversion.jpg';
 
 
 const Gallery =() =>{
 
+    // PHOTO GALLERY
+
     const school = myImages.slice(0,10)
     const images = myImages.slice(10,25)
     const lotos = myImages.slice(25,49)
-    const bands = myImages.slice(49,57)
-    const life = myImages.slice(57,89)
+    const bands = myImages.slice(49,61)
+    const life = myImages.slice(61,93)
 
     const items = [{
         title:  "Школа",
@@ -119,9 +122,26 @@ const Gallery =() =>{
         } 
     }
 
+    // VIDEO GALLERY
+
+
+
+
     return (
-        <div className='gallery'>
-            <div className='pics-chain'>                   
+        <div>            
+            <div>
+                <img alt='Liversion Band' src={Liversion} style={{width: '100vw'}}/>
+            </div>
+            <div className='titles'>
+                <div className='title'>
+                    ФОТОГАЛЕРЕЯ
+                </div>
+                <div className='title'>
+                    АУДИО И ВИДЕО
+                </div>
+            </div>            
+            <div className='gallery'>
+                <div className='pics-chain'>                   
                     {renderedImages(currentItem.pics)}               
                 </div>
             <div className='under-chain'>
@@ -131,7 +151,8 @@ const Gallery =() =>{
                     </ul>
                 </div>
             {enlarged()} 
-                </div>                                                   
+                </div>  
+            </div>                                                         
         </div>
     )
 }

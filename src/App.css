@@ -2,9 +2,52 @@ figure {
     margin: auto;
 }
 
+.titles {
+    display:flex;
+    flex-direction: row; 
+}
+
+.title {
+    width: 50%;
+    text-align: center;    
+}
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.videos-list {
+    width: 30wv;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-thumb {
+    width: 20wv;
+    border: 1px black solid;
+    padding: 1vw;
+    cursor: pointer
+}
+.video-thumb img {    
+    width:  15vw;
+    display: block;
+} 
+
+.enlarged-video {
+    width: 60vw;
+    position:fixed;
+    top: 5vw;
+    right: 5vw;
+}
+
+.player-wrapper {
+    
+   margin: 1vw; 
+}
+
 .gallery {
     box-sizing: border-box;
-    display:flexbox;
+    display:flex;
     flex-direction: column;   
 }
 
