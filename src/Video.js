@@ -7,6 +7,8 @@ const Video = ({ url })=>{
         <div className='player-wrapper'>
             <ReactPlayer
             className='react-player'
+            width = '100%'
+            
             url = {url}
             controls = {true}
             />

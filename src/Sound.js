@@ -1,38 +1,53 @@
 import React, { useState } from 'react';
 import Video from './Video';
 import myVideos from './videos';
+import Liversion from './liversion.jpg';
 
  // VIDEO GALLERY
 
 const Sound =() =>{
 
     const videos = myVideos;
-    const [currentVideo, setCurrentVideo] = useState(videos[0]);
+    const videosFirst = videos.slice(0,6);
+    const videosLast = videos.slice(6);
+    const [currentVideo, setCurrentVideo] = useState(videos[8]);
 
     const onVideoClick = (video)=> {
         setCurrentVideo(video);
     }
        
-    const renderedVideos = videos.map(video=> {
+    const renderedFirst = videosFirst.map(video=> {
         return(
             <div className='video-thumb' key={video.id} onClick={()=>onVideoClick(video)}>
                 <img alt='' src={video.pic}/>
-                <span>{video.title}</span>
+                <p>{video.title}</p>
             </div>
         )
     });
-
+    
+    const renderedLast = videosLast.map(video=> {
+        return(
+            <div className='video-thumb' key={video.id} onClick={()=>onVideoClick(video)}>
+                <img alt='' src={video.pic}/>
+                <p>{video.title}</p>
+            </div>
+        )
+    });
     
     return (
-        <div className='container'>
-            <div className ='videos-list'>            
-                {renderedVideos}                                                                     
+            <div className='container'>
+            <div className ='videos-list-left'>            
+                {renderedFirst}                                                                     
+            </div>
+            
+            <div className ='videos-list-right'>            
+                {renderedLast}                                                                     
             </div>
             <div className='enlarged-video'>
                 <Video url={currentVideo.url}/>
-                <div>{currentVideo.descr}</div>
+                <p>{currentVideo.descr}</p>
             </div>
-        </div>        
+        </div>              
     )
 }
 

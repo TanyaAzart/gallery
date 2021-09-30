@@ -14,35 +14,58 @@ figure {
 .container {
     display: flex;
     flex-direction: row;
+    width: 90vw;
+    margin:auto;
 }
 
-.videos-list {
+.videos-list-left {
     width: 30wv;
     display: flex;
     flex-direction: column;
+    margin-left: 2vw;
+}
+
+.videos-list-right {
+    width: 30wv;
+    display: flex;
+    flex-direction: column;
+    margin-left: 53vw;
 }
 
 .video-thumb {
-    width: 20wv;
-    border: 1px black solid;
-    padding: 1vw;
-    cursor: pointer
+    cursor: pointer;
+    border:rgb(129, 126, 129) 2px solid;
+    margin: 1vh;
 }
 .video-thumb img {    
-    width:  15vw;
+    height: 150px;
     display: block;
+    margin: auto;
 } 
 
+.video-thumb p {
+    text-align: center;
+    font-size: small;
+}
+
 .enlarged-video {
-    width: 60vw;
+    width: 50vw;
     position:fixed;
     top: 5vw;
-    right: 5vw;
+    right: 24.5vw;
+}
+
+.enlarged-video p {
+    text-align: center;
 }
 
 .player-wrapper {
-    
-   margin: 1vw; 
+    cursor: pointer; 
+    margin: 1vw; 
+}
+
+.player {
+    width: 40vw;
 }
 
 .gallery {
